@@ -1,5 +1,5 @@
-dash==2.6.0
-dash.dependencies==2.6.0
+dash
+dash.dependencies
 pandas
 gunicorn
 dash_bootstrap_components
