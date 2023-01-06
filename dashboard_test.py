@@ -137,8 +137,8 @@ Arsenal_players_in = (Arsenal[(Arsenal.transfer_movement == "in")])
 
 Arsenal2 = Arsenal_players_in[["year","position","role","transfer_movement"]]
 
-Arsenal2 = Arsenal2.groupby(["year","role","transfer_movement"], as_index=False)
-Arsenal2 = Arsenal2["position"].value_counts()
+Arsenal2 = Arsenal2.groupby(["year","role","transfer_movement"], as_index=False)["position"].value_counts()
+
 Arsenal2
 
 import plotly
