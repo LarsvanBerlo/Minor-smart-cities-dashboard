@@ -4,4 +4,5 @@ gunicorn
 dash_bootstrap_components
 seaborn
 plotly
+plotly.express
 numpy
