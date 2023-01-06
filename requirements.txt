@@ -1,11 +1,10 @@
 dash
-dash.dependencies
-pandas
-gunicorn
 dash_bootstrap_components
-seaborn
 plotly
+seaborn
+pandas
 plotly.express
-plotly.subplots
 plotly.graph_objects
-numpy
+plotly.subplots
+dash.dependencies
+gunicorn
