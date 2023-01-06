@@ -120,8 +120,8 @@ merged['Arsenal'] = np.where(merged['Team'] == 'Arsenal FC', True, False)
 
 Arsenal["position"].value_counts()
 
-def set_value(row_number, assigned_value):
-    return assigned_value[row_number]
+def set_value(row, positions):
+    return positions[row["position"]]
 
 positions = {'Goalkeeper' : 'goalkeeper', 'Centre-Back' : 'defender', 'Right-Back' : 'defender', 'Left-Back' : 'defender','defence' : 'defender',
             'Defensive Midfield' : 'midfielder', 'Central Midfield' : 'midfielder' , 'Attacking Midfield' : 'midfielder', 'Right Midfield' : 'midfielder',
@@ -129,17 +129,23 @@ positions = {'Goalkeeper' : 'goalkeeper', 'Centre-Back' : 'defender', 'Right-Bac
              'Centre-Forward' : 'attacker', 'Right Winger' : 'attacker', 'Left Winger' : 'attacker', 'Second Striker' : 'attacker'
             }
 
-Arsenal['role'] = Arsenal['position'].apply(set_value, args =(positions, ))
+Arsenal['role'] = Arsenal.apply(set_value, axis=1, args =(positions, ))
 
-Arsenal['role'].value_counts()
+role_counts = Arsenal['role'].value_counts().reset_index()
+role_counts.columns = ['role', 'count']
 
 Arsenal_players_in = (Arsenal[(Arsenal.transfer_movement == "in")])
 
 Arsenal2 = Arsenal_players_in[["year","position","role","transfer_movement"]]
 
-Arsenal2 = Arsenal2.groupby(["year","role","transfer_movement"], as_index=False)["position"].value_counts()
+grouped = Arsenal2.groupby(["year","position","role","transfer_movement"])
 
-Arsenal2
+result = grouped.size().reset_index()
+result.columns = ['year', 'role', "position",'transfer_movement', 'count']
+
+Arsenal2 = result
+
+Arsenal2 = Arsenal2.rename(columns={"role": "position", "position": "role"})
 
 import plotly
 
