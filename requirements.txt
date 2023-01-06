@@ -4,7 +4,6 @@ plotly
 seaborn
 pandas
 plotly.express
-plotly.graph_objects
 plotly.subplots
 dash.dependencies
 gunicorn
