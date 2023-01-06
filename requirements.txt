@@ -2,7 +2,10 @@ dash==2.6.0
 pandas
 gunicorn
 dash_bootstrap_components
+dash.dependencies
 seaborn
 plotly
 plotly.express
+plotly.subplots
+plotly.graph_objects
 numpy
