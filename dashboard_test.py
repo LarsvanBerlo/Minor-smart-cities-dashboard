@@ -5,8 +5,8 @@ import seaborn as sns
 import pandas as pd
 from dash.dependencies import Input, Output
 
-Transfers = pd.read_csv("D:/Lars_/Documents/Minor smart cities/Leerdoel 1/Dashboard/Dataset/archive (1)/data/premier-league.csv")
-Standen = pd.read_csv("D:/Lars_/Documents/Minor smart cities/Leerdoel 1/Dashboard/Dataset/archive/EPL Standings 2000-2022.csv")
+Transfers = pd.read_csv("premier-league.csv")
+Standen = pd.read_csv("EPL Standings 2000-2022.csv")
 
 Transfers.head()
 
