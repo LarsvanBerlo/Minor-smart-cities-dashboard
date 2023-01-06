@@ -3,7 +3,4 @@ dash_bootstrap_components
 plotly
 seaborn
 pandas
-plotly.express
-plotly.subplots
-dash.dependencies
 gunicorn
