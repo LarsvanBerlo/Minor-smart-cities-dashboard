@@ -282,6 +282,7 @@ def drawText():
 
 # Build App
 app = Dash(external_stylesheets=[dbc.themes.SLATE])
+server = app.server
 
 app.layout = html.Div(
     children=[
