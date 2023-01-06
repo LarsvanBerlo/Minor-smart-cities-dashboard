@@ -1,6 +1,6 @@
-dash
-dash_bootstrap_components
-plotly
-seaborn
-pandas
+dash==2.7.0
+dash_bootstrap_components==1.2.1
+plotly==5.6.0
+seaborn==0.11.2
+pandas==1.4.2
 gunicorn
