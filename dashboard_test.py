@@ -376,7 +376,7 @@ def update_figure(selected_year):
 
     filtered_df = merged[merged.Season1 == selected_year]
 
-    fig = px.scatter(filtered_df, x="Transfer uitgaven", y="Pts",color="Arsenal",log_x=False, size_max=55,color_discrete_map=color_discrete_map,hover_name="Team",title = "<b>Money spent</b> in Milions,<b> Amount</b> of points ")
+    fig = px.scatter(filtered_df, x="Transfer uitgaven", y="Pts",color="Arsenal",log_x=False, size_max=55,color_discrete_map=color_discrete_map,hover_name="Team",title = "<b>Geld uitgegeven</b> in Miljoenen,<b> aantal</b> punten ")
     fig.update_layout(uniformtext_minsize=8,showlegend=False, uniformtext_mode='hide',xaxis_showgrid=False, yaxis_showgrid=False, plot_bgcolor = "white", yaxis={'categoryorder':'total descending'})
     fig.update_yaxes(title='pts', visible=True, showticklabels=True,ticksuffix = "        ")
     fig.update_xaxes(title='Amount of money spent (milions)', visible=True, showticklabels=True)
@@ -397,7 +397,7 @@ def update_figure(selected_year):
              'Centre-Forward' : '#888888', 'Right Winger' : '#999999', 'Left Winger' : '#c2c2c2', 'Second Striker' : '#dbdbdb'
             }
 
-    fig2 = px.bar(filtered_df, x="count", y="role", color="position",color_discrete_map=color_discrete_map,barmode='stack',text="position",title ="<b>Amount</b> of players bought")
+    fig2 = px.bar(filtered_df, x="count", y="role", color="position",color_discrete_map=color_discrete_map,barmode='stack',text="position",title ="<b>Aantal</b> spelers gekocht per linie")
     fig2.update_layout(showlegend=False, uniformtext_minsize=8, uniformtext_mode='hide',xaxis_showgrid=False, yaxis_showgrid=False, plot_bgcolor = "white",barmode='stack', yaxis={'categoryorder':'total descending'})
     fig2.update_yaxes(title=' ', visible=True, showticklabels=True,ticksuffix = "        ")
     fig2.update_xaxes(title=' ', visible=True, showticklabels=True)
