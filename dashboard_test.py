@@ -378,8 +378,8 @@ def update_figure(selected_year):
 
     fig = px.scatter(filtered_df, x="Transfer uitgaven", y="Pts",color="Arsenal",log_x=False, size_max=55,color_discrete_map=color_discrete_map,hover_name="Team",title = "<b>Geld uitgegeven</b> in Miljoenen,<b> aantal</b> punten ")
     fig.update_layout(uniformtext_minsize=8,showlegend=False, uniformtext_mode='hide',xaxis_showgrid=False, yaxis_showgrid=False, plot_bgcolor = "white", yaxis={'categoryorder':'total descending'})
-    fig.update_yaxes(title='pts', visible=True, showticklabels=True,ticksuffix = "        ")
-    fig.update_xaxes(title='Amount of money spent (milions)', visible=True, showticklabels=True)
+    fig.update_yaxes(title='punten', visible=True, showticklabels=True,ticksuffix = "        ")
+    fig.update_xaxes(title='Geld uitgegeven (Miljoenen)', visible=True, showticklabels=True)
 
     fig.update_layout(transition_duration=500)
 
