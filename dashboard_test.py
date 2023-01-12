@@ -4,6 +4,7 @@ import plotly.express as px
 import seaborn as sns
 import pandas as pd
 from dash.dependencies import Input, Output
+import plotly.graph_objects as go
 
 Transfers = pd.read_csv("premier-league.csv")
 Standen = pd.read_csv("EPL Standings 2000-2022.csv")
