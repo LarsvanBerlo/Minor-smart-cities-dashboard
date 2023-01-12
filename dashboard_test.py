@@ -172,7 +172,7 @@ Arsenal_position["ranking"] = 3 - Arsenal_position["Pos"]
 
 fig8 = px.bar(Arsenal_position, y='Pos', x="Season1", text='Pos',title="outgoing transfers")
 fig8.update_traces(texttemplate='%{text:}', textposition='outside',marker_color='black')
-fig8.update_layout(uniformtext_minsize=8, uniformtext_mode='hide',xaxis_showgrid=False, yaxis_showgrid=False, plot_bgcolor = "white",yaxis={'categoryorder':'total ascending'},xaxis_range=[2000,2022],yaxis_range=[0,15])
+fig8.update_layout(uniformtext_minsize=8, uniformtext_mode='hide',xaxis_showgrid=False, yaxis_showgrid=False, plot_bgcolor = "white",yaxis={'categoryorder':'total ascending'},xaxis_range=[2010,2022],yaxis_range=[0,15])
 fig8.update_yaxes(title=' ', visible=True, showticklabels=True,ticksuffix = "        ")
 fig8.update_xaxes(title=' ', visible=True, showticklabels=True)
 fig8.add_hline(y=3)
@@ -339,7 +339,7 @@ app.layout = html.Div(
             dbc.CardBody([
                 dcc.Graph(id='graph-with-slider')]),color="danger"),
                     dcc.Slider(
-                    2002,
+                    Arsenal2['year'].min(),
                     Arsenal2['year'].max(),
                     step=None,
                     value=Arsenal2['year'].min(),
