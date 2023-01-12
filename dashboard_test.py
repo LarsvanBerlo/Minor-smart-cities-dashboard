@@ -12,7 +12,8 @@ Transfers.head()
 
 Standen.head()
 
-Transfers = (Transfers[(Transfers.year > 1999)])
+Transfers = (Transfers[(Transfers.year > 2010)])
+Standen = (Standen[(Standen.Season1 > 2010)])
 
 Transfers_s = Transfers[["club_name","age","position","transfer_movement","fee_cleaned","year"]]
 Transfers_s.head()
@@ -33,7 +34,7 @@ merged.head(15)
 import plotly.express as px
 
 array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
-colors = ['green',] * 440
+colors = ['green',] * 220
 
 for color in array:
     colors[color] = 'crimson'
@@ -83,8 +84,7 @@ fig2.update_layout(uniformtext_minsize=8, uniformtext_mode='hide',xaxis_showgrid
 fig2.update_yaxes(title=' ', visible=True, showticklabels=True,ticksuffix = "        ")
 fig2.update_xaxes(title=' ', visible=True, showticklabels=True)
 
-import plotly.graph_objects as go
-array = [0,1,2,3,4,5,6,7,8,10,13,14,15,16,18,19,20,21,22]
+array = [2,3,4,5,7,8,9,10,11]
 
 colors = ['green',] * 32
 
@@ -109,9 +109,9 @@ fig.add_trace(fig2.data[0], row=2, col=1)
 
 fig.add_trace(fig3.data[0], row=1, col=1)
 
-fig.update_layout(height=900, width=890, title_text="Panel layout")
+fig.update_layout(height=900, width=720, title_text="Panel layout")
 fig.update_traces(texttemplate='%{text:.2s}', textposition='outside')
-fig.update_layout(showlegend=False,uniformtext_minsize=8, uniformtext_mode='hide',xaxis_showgrid=False, yaxis_showgrid=False, plot_bgcolor = "white",yaxis={'categoryorder':'total ascending'},title_text='Arsenal<br><b>Transfer winst/verlies</b> In miljoen Euro<br>1993-2022')
+fig.update_layout(showlegend=False,uniformtext_minsize=8, uniformtext_mode='hide',xaxis_showgrid=False, yaxis_showgrid=False, plot_bgcolor = "white",yaxis={'categoryorder':'total ascending'},title_text='Arsenal<br><b>Transfer winst/verlies</b> In miljoen Euro<br>2010-2022')
 
 
 import numpy as np
@@ -176,7 +176,7 @@ fig8.update_yaxes(title=' ', visible=True, showticklabels=True,ticksuffix = "   
 fig8.update_xaxes(title=' ', visible=True, showticklabels=True)
 fig8.add_hline(y=3)
 
-array = [5,6,8,10,12,13,16,17,18,19,20,21]
+array = [1,2,5,6,7,8,9,10]
 
 colors = ['green',] * 22
 
@@ -197,9 +197,9 @@ fig_positie.add_trace(fig8.data[0], row=2, col=1)
 fig_positie.add_hline(y=3)
 fig_positie.add_trace(fig6.data[0], row=1, col=1)
 
-fig_positie.update_layout(height=900, width=890, title_text="Panel layout")
+fig_positie.update_layout(height=900, width=720, title_text="Panel layout")
 fig_positie.update_traces(texttemplate='%{text:.2s}', textposition='outside')
-fig_positie.update_layout(showlegend=False,uniformtext_minsize=8, uniformtext_mode='hide',xaxis_showgrid=False, yaxis_showgrid=False, plot_bgcolor = "white",yaxis={'categoryorder':'total ascending'},title_text='<b>Positie</b> op ranglijst<br>1993-2022')
+fig_positie.update_layout(showlegend=False,uniformtext_minsize=8, uniformtext_mode='hide',xaxis_showgrid=False, yaxis_showgrid=False, plot_bgcolor = "white",yaxis={'categoryorder':'total ascending'},title_text='<b>Positie</b> op ranglijst<br>2010-2022')
 
 fig_bul1 = go.Figure(go.Indicator(
     mode = "number+gauge+delta", value = 369.1,
